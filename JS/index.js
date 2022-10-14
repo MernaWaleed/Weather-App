@@ -54,7 +54,6 @@ displayDegree();
 async function displayDegree() {
   let searchedCity = findInput.value || "cairo";
   let result = await getDegree(searchedCity);
-  // let result = await getDegree("london");
   city.textContent = result.location.name;
   let datestr = result.forecast.forecastday[0].date;
   let realDate = new Date(datestr);
@@ -80,7 +79,6 @@ async function displayDegree() {
   let nameDay;
   for (let d = 0; d < degree.length; d++) {
     nameDay = changeDateName(result.forecast.forecastday[d].date);
-    // console.log(nameDay);
     dayName[d].textContent = nameDay;
 
     for (let i = 0; i < result.forecast.forecastday[d].hour.length; i++) {
